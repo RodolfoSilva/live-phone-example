@@ -18,6 +18,10 @@ defmodule ExampleWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    live "/contacts", ContactLive.Index, :index
+    live "/contacts/new", ContactLive.Index, :new
+    live "/contacts/:id/edit", ContactLive.Index, :edit
   end
 
   # Other scopes may use custom stacks.
